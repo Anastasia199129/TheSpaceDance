@@ -1,0 +1,70 @@
+html
+
+*, ::before, ::after
+  box-sizing: border-box
+
+@import fonts.sass
+@import settings.sass
+
+html
+  scroll-behavior: smooth
+
+body
+  margin: 0
+  padding: 0
+  font-family: $m
+  line-height: 1.8
+  color: $black
+  background-color: $white
+
+[data-theme=dark] body
+  background-color: $black
+  color: $white
+
+*, :after, :before
+  box-sizing: border-box
+
+.container
+  max-width: 1194px
+  margin-left: auto
+  margin-right: auto
+  +r(1551)
+    padding: 0 15px
+  +r(1441, 1550)
+    padding: 0 15px 0 50px
+  +r(1351, 1440)
+    padding: 0 15px 0 100px
+  +r(992, 1350)
+    padding: 0 15px 0 135px
+  +r(576, 991)
+    padding: 0 30px
+  +r(0, 575)
+    padding: 0 15px
+
+/*styles for a headlines*/ 
+h1
+  display: none
+
+h1, h2, h3, h4
+  font-weight: 600
+  line-height: 1.2
+
+h1
+  +r(768)
+    font-size: 48px
+  +r(576, 767)
+    font-size: 44px
+  +r(0, 575)
+    font-size: 32px
+
+ul, p
+  list-style: none
+  padding: 0   
+  margin: 0 
+
+li
+  list-style-type: none
+
+a
+  text-decoration: none
+  

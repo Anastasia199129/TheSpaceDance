@@ -1,0 +1,40 @@
+[
+  {
+    "id": "0",
+    "name": "Home",
+    "link": "/"
+  },
+  {
+    "id": "1",
+    "name": "Sobre Nosotros",
+    "link": "/sobre-nosotros"
+  },
+  {
+    "id": "2",
+    "name": "Horarios",
+    "link": "/horarios"
+  },
+
+  {
+    "id": "3",
+    "name": "Dance Styles",
+    "link": "/dance-styles"
+  },
+
+  {
+    "id": "4",
+    "name": "Instalaciones",
+    "link": "/instalaciones"
+  },
+
+  {
+    "id": "5",
+    "name": "Profesores",
+    "link": "/profesores"
+  },
+  {
+    "id": "6",
+    "name": "Contacto",
+    "link": "/contacto"
+  }
+]

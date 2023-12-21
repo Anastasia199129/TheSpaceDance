@@ -1,0 +1,57 @@
+{
+  "header": {
+    "Home": "Home",
+    "Sobre Nosotros": "Sobre Nosotros",
+    "Horarios": "Horarios",
+    "Dance Styles": "Dance Styles",
+    "Instalaciones": "Instalaciónes",
+    "Profesores": "Profesores",
+    "Contacto": "Contacto"
+  },
+  "IndexLinks": {
+    "Origen": "Origen",
+    "Bboy": "Bboy",
+    "Bgirl": "Bgirl",
+    "Cypher": "Cypher",
+    "Reglas": "Reglas",
+    "Batalla": "Batalla",
+    "Competicion": "Competicion",
+    "Underground": "Underground",
+    "Musicalidad": "Musicalidad",
+    "Inicios": "Inicios",
+    "Breaking": "Breaking",
+    "Nueva York": "Nueva York",
+    "HipHop": "HipHop",
+    "Break Dance": "Break Dance",
+    "Entrenamientos": "Entrenamientos",
+    "Cultura": "Cultura"
+  },
+  "Index": {
+    "title": "Holla world",
+    "subtitle": "Sigue el enlace y descubre más información."
+  },
+  "contacto": {
+    "title": "Contacto"
+  },
+  "heroTitle": {
+    "Home": "The Space Dance Studios"
+  },
+  "heroSubtitle": {
+    "Home": "Escuela de baile"
+  },
+  "schedule": {
+    "weekend": "Sabado: 12:00 - 15:00",
+    "workDays": "Lunes a Viernes: 17:00 a 22:00"
+  },
+  "form": {
+    "title": "Contacta con Nosotras",
+    "require": "Requerir",
+    "name": "Nombre",
+    "surname": "Apellido",
+    "mail": "Correo electrónico",
+    "emailError": "Email inválido",
+    "phone": "Teléfono",
+    "coment": "Comentario",
+    "btn": "Enviar"
+  }
+}

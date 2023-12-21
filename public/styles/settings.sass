@@ -1,0 +1,36 @@
+// fonts
+$m: 'Montserrat', sans-serif
+$a: 'Archivo', sans-serif
+
+$primaryDeep: #1E3235
+$primaryDarker: #1E6E7A
+$primaryDark: #0D8AA2
+$primaryMedium: #12AFBD
+$primaryNormal: #29D4CA
+$primaryLight: #EAFBFA
+$greyDeep: #2E3539
+$greyDark: #3E4546
+$greyMedium: #6E767E
+$greyNormal: #A0A9B1
+$greyLight: #C7D1D8
+$greySilver: #E5EDF2
+$greyWhitish: #F2F6F8
+$accentDark: #1B2C39
+$accentNormal: #3386FF
+$accentLight: #F2FAFF
+$black: #1E2023
+$white: #FFFFFF
+$conditionError: #FF5159
+$googleBg: #4285F4
+$gradientEmerald: linear-gradient(125.35deg, #22C49D 8.71%, #11AEBD 91.7%)
+$tr: 0.3s
+
+@mixin r($minSize, $maxSize: false)
+
+  @if $minSize and $maxSize
+    @media only screen and (min-width: $minSize + 'px') and (max-width: $maxSize + 'px')
+      @content
+
+  @else
+    @media only screen and (min-width: $minSize + 'px')
+      @content

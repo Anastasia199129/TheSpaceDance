@@ -1,0 +1,41 @@
+@import ../../public/styles/settings
+  
+.list
+  display: flex
+  justify-content: center
+  text-decoration: none
+  font-style: normal
+
+  &.listDark
+    a
+      color: $white
+
+  &.listLight
+    a
+      color: $black
+
+  a
+    display: flex
+    align-items: flex-end
+    justify-content: center
+    transition: $tr
+
+    &:hover
+      color: $accentNormal
+
+  li
+    &:not(:last-child)
+      margin-right: 20px
+
+    &:nth-child(3)
+      svg
+        margin-right: 10px
+
+    &:hover
+      svg
+        transform: scale(1.1)    
+
+  svg
+    margin-right: 5px
+    transform: scale(1)
+    transition: $tr

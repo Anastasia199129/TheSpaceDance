@@ -1,0 +1,65 @@
+@import ../../public/styles/settings
+
+.header  
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
+  box-shadow: rgba(10, 17, 240, 0.35) 0px 20px 20px
+
+  .container
+    position: relative
+    padding: 25px 0px
+
+    .absolute
+      position: absolute
+      gap: 30px
+      top: 10px
+      bottom: 30px
+
+    .absoluteThemeSwitcher
+      position: absolute  
+      top: 10px
+      right: 0px
+    
+    .list
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 20px
+
+      &.dark
+
+        .link
+          &:not(.active)
+            color: $white
+
+      &.light 
+
+        .link
+          &:not(.active)
+            color: $black
+
+      li
+        position: relative
+        font-weight: 600
+        font-size: 20px
+        transition: $tr
+
+        &::after
+          position: absolute
+          bottom: 0
+          left: 0
+          transform: scale(0)
+          content: ""
+          width: 100%
+          height: 4px
+          transition: $tr
+          background-color: $accentNormal
+
+        &:hover
+
+          &::after
+            transform: scale(1)
+
+        &.active  
+
+          &::after
+            transform: scale(1)

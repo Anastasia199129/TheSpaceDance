@@ -1,0 +1,9 @@
+// tsconfig.jest.json
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "jsx": "react",
+    "esModuleInterop": true
+  }
+}

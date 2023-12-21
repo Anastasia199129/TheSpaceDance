@@ -1,0 +1,34 @@
+@import ../../public/styles/settings
+  
+.container
+  display: flex
+
+  &.verticalContainer
+    justify-content: center
+    align-items: center
+
+    a
+
+      &:not(:last-child)
+        margin-right: 20px
+
+  &.footerContainer
+
+    a
+
+      &:not(:last-child)
+        margin-right: 10px
+    
+  a
+      
+    &.dark
+      svg
+        fill: $white
+        
+    svg
+      width: 30px
+      transform: scale(1)
+      transition: $tr
+
+      &:hover
+        transform: scale(1.1)    

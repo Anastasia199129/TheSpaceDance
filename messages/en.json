@@ -1,0 +1,57 @@
+{
+  "header": {
+    "Home": "Home",
+    "Sobre Nosotros": "About Us",
+    "Horarios": "Schedule",
+    "Dance Styles": "Dance Styles",
+    "Instalaciones": "Facilities",
+    "Profesores": "Teachers",
+    "Contacto": "Contact"
+  },
+  "IndexLinks": {
+    "Origen": "Origin",
+    "Bboy": "Bboy",
+    "Bgirl": "Bgirl",
+    "Cypher": "Cypher",
+    "Reglas": "Rules",
+    "Batalla": "Battle",
+    "Competicion": "Competition",
+    "Underground": "Underground",
+    "Musicalidad": "Musicality",
+    "Inicios": "Beginnings",
+    "Breaking": "Breaking",
+    "Nueva York": " New York",
+    "HipHop": "Hip-Hop",
+    "Break Dance": "Breakdance",
+    "Entrenamientos": "Training",
+    "Cultura": "Culture"
+  },
+  "Index": {
+    "title": "hello world",
+    "subtitle": "Follow the link and find out more information."
+  },
+  "contacto": {
+    "title": "Contacts"
+  },
+  "heroTitle": {
+    "Home": "The Space Dance Studios"
+  },
+  "heroSubtitle": {
+    "Home": "Dance school"
+  },
+  "schedule": {
+    "weekend": "Saturday: 12 PM - 3 PM",
+    "workDays": "Monday to Friday: 5 PM to 10 PM"
+  },
+  "form": {
+    "title": "Contact Us",
+    "require": "Required",
+    "name": "Name",
+    "surname": "Surname",
+    "mail": "Email",
+    "emailError": "Invalid Email",
+    "phone": "Phone",
+    "coment": "Comment",
+    "btn": "Send"
+  }
+}

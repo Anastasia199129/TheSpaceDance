@@ -1,0 +1,35 @@
+@import ../../public/styles/settings
+
+.list
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr
+  gap: 20px
+
+  .link
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: center
+
+    .absolute
+      position: absolute
+      width: 100%
+      
+      h3
+        font-size: 28px
+        text-align: center 
+        // background-color: #7FFF00
+        background-color: #3386FF
+
+    img
+      width: 100%  
+
+  &.dark
+
+    .link
+      color: $white
+
+  &.light
+
+    .link
+      color: $black

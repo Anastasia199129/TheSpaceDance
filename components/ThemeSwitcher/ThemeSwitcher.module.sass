@@ -1,0 +1,33 @@
+@import ../../public/styles/settings
+
+.themeSwitcher
+  display: inline-flex
+  flex-direction: column
+  align-items: center
+  cursor: pointer
+
+  .icon
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 24px
+    height: 24px
+    margin-bottom: 13px
+
+  .toggleBar
+    display: grid
+    grid-template-columns: 1fr 1fr
+    width: 54px
+
+    .color
+      height: 2px
+      transition: $tr
+
+      &.on
+        background: $primaryMedium
+
+      &.offLight
+        background: $greySilver
+
+      &.offDark
+        background: $greyDeep

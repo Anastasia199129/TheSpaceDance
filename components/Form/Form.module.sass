@@ -1,0 +1,98 @@
+@import ../../public/styles/settings
+
+.section
+  +r(0, 575)
+    margin-top: 64px
+    margin-bottom: 64px
+  +r(576, 991)
+    margin-top: 96px
+    margin-bottom: 96px
+  +r(992)
+    margin-top: 144px
+    margin-bottom: 144px
+
+  h4
+    font-size: 20px
+    font-weight: 500
+    // color: $accentNormal
+    text-align: center
+
+    +r(0, 575)
+      margin-bottom: 20px
+    +r(576, 991)
+      margin-bottom: 30px
+    +r(992)
+      margin-bottom: 40px
+
+.formContainer
+  // box-shadow: rgba(10, 17, 240, 0.35) 0px -20p
+  background-color: rgba(10, 17, 240, 0.35)
+  max-width: 800px
+  margin: 0 auto
+  border-radius: 6px
+  display: flex
+  flex-direction: column
+  padding: 40px 80px
+
+  .form
+    display: grid
+    grid-template-columns: 1fr 1fr
+    grid-gap: 15px
+    font-weight: 500
+
+    div
+      &:last-child
+        grid-column-start: 1
+        grid-column-end: 3
+
+    label, span
+
+      +r(0, 991)
+        font-size: 16px
+
+      +r(992)
+        font-size: 18px
+
+    input, textarea
+      width: 100%
+      border-radius: 6px
+      background-color: $white
+      border-color: $accentNormal
+      padding: 2px 10px
+      outline-color: blue
+
+    input
+      height: 30px
+
+  .button
+    background-color: $white
+    color: $black 
+    padding: 6px 18px
+    outline: none
+    border: navajowhite
+    border-radius: 6px
+    cursor: pointer
+    transition: $tr
+    max-width: 120px
+    min-width: 100px
+    margin: 10px auto 0px auto
+    transform: scale(1)
+
+    +r(0, 991)
+      font-style: 16px
+    +r(992)
+      font-size: 18px
+
+    &:hover, &:focus
+      background-color: #e0e8f6
+      transform: scale(1.1)
+
+  &.lightLabel 
+
+    label, span
+      color: $black
+
+  &.blackLabel 
+       
+    label, span
+      color: $white
