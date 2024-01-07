@@ -12,7 +12,7 @@ export async function POST(request: Request) {
   try {
     const data = await request.json()
     if (data) {
-      console.log({ 'data!!': data })
+      // console.log({ 'data!!': data })
 
       const msg = createSendGrMsg(data)
       console.log( {msg});
