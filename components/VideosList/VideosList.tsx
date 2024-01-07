@@ -1,23 +1,35 @@
+import Container from '../Container/Container'
+import s from './VideosList.module.sass'
+
+import data from '@/data/Home/videoList.json'
+import { FaVideo } from "react-icons/fa6"
 
 const VideoPage = () => {
   return (
-    <div>
-      <h1>Видео с YouTube</h1>
-      <div>
-        <h1>Title</h1>
-        <iframe
-          width="560"
-          height="315"
-          // src="https://youtu.be/xTxtLPhO2F8?si=zqRZ3EUuR00zgVX4"
-          src="https://www.youtube.com/embed/xTxtLPhO2F8"
-          title="YouTube Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        ></iframe>
-      </div>
-    </div>
-  );
-};
+    <section>
+      <Container>
+        <h2 className={s.title}>
+          <FaVideo/>
+          Videos</h2>
+        <div className={s.videoListContainer}>
+          {data?.map(({ id, src, title }) => (
+            <div key={id}>
+            {/* <p>{title}</p> */}
+              <p>{title}</p>
+              <iframe
+                src={src}
+                title='YouTube Video'
+                frameBorder='0'
+                allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              >
+              </iframe>
+            </div>
+          ))}
+        </div>
+      </Container>
+    </section>
+  )
+}
 
-export default VideoPage;
+export default VideoPage

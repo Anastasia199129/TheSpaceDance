@@ -204,7 +204,7 @@ export default function ChacraForm() {
                 onChange={handleChange}
                 onBlur={onBlur}
               />
-              <FormErrorMessage>{t('require')}</FormErrorMessage>
+              <FormErrorMessage className={s.red}>{t('require')}</FormErrorMessage>
             </FormControl>
             <FormControl
               isRequired
@@ -221,7 +221,7 @@ export default function ChacraForm() {
                 onChange={handleChange}
                 onBlur={onBlur}
               />
-              <FormErrorMessage>{t('require')}</FormErrorMessage>
+              <FormErrorMessage className={s.red}>{t('require')}</FormErrorMessage>
             </FormControl>
             <FormControl
               isRequired
@@ -240,10 +240,10 @@ export default function ChacraForm() {
                 onBlur={onBlur}
               />
               {!isValidValues.email && (
-                <FormErrorMessage>{t('emailError')}</FormErrorMessage>
+                <FormErrorMessage className={s.red}>{t('emailError')}</FormErrorMessage>
               )}
               {!values.email && touched.email && (
-                <FormErrorMessage>{t('require')}</FormErrorMessage>
+                <FormErrorMessage className={s.red}>{t('require')}</FormErrorMessage>
               )}
             </FormControl>
 

@@ -1,17 +1,29 @@
 @import ../../public/styles/settings
 
 .header  
-  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px
   box-shadow: rgba(10, 17, 240, 0.35) 0px 20px 20px
 
-  .container
+  .wrapper
+    font-family: $m
     position: relative
-    padding: 25px 0px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    +r(0, 767)
+      font-size: 18px
+    +r(768, 991)
+      font-size: 16px
+    +r(768, 991)  
+      padding: 35px 0px 35px 80px
+    +r(992)
+      font-size: 18px
+      padding: 40px 30px 25px 30px
 
     .absolute
       position: absolute
       gap: 30px
       top: 10px
+      left: 0px
       bottom: 30px
 
     .absoluteThemeSwitcher
@@ -19,47 +31,104 @@
       top: 10px
       right: 0px
     
-    .list
-      display: flex
-      align-items: center
-      justify-content: center
-      gap: 20px
+  .list
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    gap: 20px
 
-      &.dark
+  .list, .menu  
 
-        .link
-          &:not(.active)
-            color: $white
+    &.dark
 
-      &.light 
+      .link
+        &:not(.active)
+          color: $white
 
-        .link
-          &:not(.active)
-            color: $black
+    &.light 
 
-      li
-        position: relative
-        font-weight: 600
-        font-size: 20px
+      .link
+        &:not(.active)
+          color: $black
+
+    li
+      position: relative
+      transition: $tr
+
+      &::after
+        position: absolute
+        bottom: 0
+        left: 0
+        transform: scale(0)
+        content: ""
+        width: 100%
+        height: 4px
         transition: $tr
+        background-color: $accentNormal
+
+      &:hover
 
         &::after
-          position: absolute
-          bottom: 0
-          left: 0
-          transform: scale(0)
-          content: ""
-          width: 100%
-          height: 4px
-          transition: $tr
-          background-color: $accentNormal
+          transform: scale(1)
 
-        &:hover
+      &.active  
 
-          &::after
-            transform: scale(1)
+        &::after
+          transform: scale(1)
 
-        &.active  
 
-          &::after
-            transform: scale(1)
+.burgerWrapper
+  display: flex
+  justify-content: flex-end
+  +r(0, 767)
+    padding: 20px 0px
+
+  .menu
+    position: absolute
+    z-index: 6
+    top: 52px
+    right: 0px 
+    padding: 20px
+    background-color: $white 
+    box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.45)
+    
+  .burger
+    cursor: pointer
+    display: block
+    position: relative
+    border: none
+    background: transparent
+    width: 30px
+    height: 26px
+
+    &::before,
+    &::after
+      content: ''
+      left: 0
+      position: absolute
+      display: block
+      width: 100%
+      height: 3px
+      border-radius: 10px
+      background: blue
+
+    &::before
+      top: 0
+      box-shadow: 0 11px 0 blue
+      transition: box-shadow .3s .15s, top .3s .15s, transform .3s
+
+    &::after
+      bottom: 0
+      transition: bottom .3s .15s, transform .3s
+
+    &.active::before
+      top: 11px
+      transform: rotate(45deg)
+      box-shadow: 0 6px 0 rgba(0,0,0,0)
+      transition: box-shadow .15s, top .3s, transform .3s .15s
+
+    &.active::after
+      bottom: 11px
+      transform: rotate(-45deg)
+      transition: bottom .3s, transform .3s .15s           

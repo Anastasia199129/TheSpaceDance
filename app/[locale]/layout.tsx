@@ -1,5 +1,8 @@
 import { ReactNode } from 'react'
 
+// import { Inter } from 'next/font/google'
+
+
 import Container from '@/components/Container/Container'
 import Header from '@/components/Header/Header'
 
@@ -34,14 +37,15 @@ export default async function LocaleLayout({ children, params }:LocaleLayoutProp
 
   return (
     <html lang={locale}>
+      <title>TheSpaceDance</title>
       <body>
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
             <main>
-              <Container>
+              {/* <Container> */}
                 {children}
-              </Container>
+              {/* </Container> */}
             </main>
             <Footer/>
           </NextIntlClientProvider>
