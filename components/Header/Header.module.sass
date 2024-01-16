@@ -1,21 +1,27 @@
 @import ../../public/styles/settings
 
-.header  
+.header
+  position: relative
+  z-index: 1
   box-shadow: rgba(10, 17, 240, 0.35) 0px 20px 20px
 
   .wrapper
     font-family: $m
     position: relative
-    display: flex
-    align-items: center
-    justify-content: space-between
     +r(0, 767)
       font-size: 18px
+      padding: 25px 0px 25px 0px
+    +r(0, 991)
+      display: flex
+      justify-content: flex-end
+      align-items: center
     +r(768, 991)
       font-size: 16px
-    +r(768, 991)  
-      padding: 35px 0px 35px 80px
+      padding: 25px 30px 25px 30px
     +r(992)
+      display: flex
+      align-items: center
+      justify-content: space-between
       font-size: 18px
       padding: 40px 30px 25px 30px
 
@@ -27,10 +33,14 @@
       bottom: 30px
 
     .absoluteThemeSwitcher
-      position: absolute  
-      top: 10px
-      right: 0px
-    
+      position: absolute
+      +r(0, 991)
+        bottom: 5px
+        left: 4px
+      +r(992)
+        top: 10px
+        right: 0px
+
   .list
     display: flex
     align-items: center
@@ -38,15 +48,17 @@
     width: 100%
     gap: 20px
 
-  .list, .menu  
+  .list, .menu
 
     &.dark
+      background-color: $black
 
       .link
         &:not(.active)
           color: $white
 
-    &.light 
+    &.light
+      background-color: $white
 
       .link
         &:not(.active)
@@ -72,27 +84,24 @@
         &::after
           transform: scale(1)
 
-      &.active  
+      &.active
 
         &::after
           transform: scale(1)
 
-
 .burgerWrapper
   display: flex
   justify-content: flex-end
-  +r(0, 767)
-    padding: 20px 0px
 
   .menu
     position: absolute
     z-index: 6
     top: 52px
-    right: 0px 
+    right: 0px
     padding: 20px
-    background-color: $white 
+    background-color: $white
     box-shadow: 0px 2px 10px 2px rgba(0, 0, 0, 0.45)
-    
+
   .burger
     cursor: pointer
     display: block
@@ -111,11 +120,11 @@
       width: 100%
       height: 3px
       border-radius: 10px
-      background: blue
+      background: $accentNormal
 
     &::before
       top: 0
-      box-shadow: 0 11px 0 blue
+      box-shadow: 0 11px 0 $accentNormal
       transition: box-shadow .3s .15s, top .3s .15s, transform .3s
 
     &::after
@@ -131,4 +140,4 @@
     &.active::after
       bottom: 11px
       transform: rotate(-45deg)
-      transition: bottom .3s, transform .3s .15s           
+      transition: bottom .3s, transform .3s .15s

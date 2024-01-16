@@ -3,7 +3,7 @@ export const sendContactForm = async (data: {
   surname: string
   email: string
   number: string
-  nachricht: string
+  coment: string
 }) =>
   fetch('/nodemailer', {
     method: 'POST',

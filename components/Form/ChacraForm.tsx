@@ -20,19 +20,19 @@ import { useState } from 'react'
 import { checkEmail } from '@/helpers/checkEmail'
 
 import s from './Form.module.sass'
+import { handleCreateUser } from '@/helpers/createUser'
 
 const initValues = {
   name: '',
   surname: '',
   email: '',
   number: '',
-  nachricht: '',
+  coment: '',
 }
 
 const initialState = { values: initValues, isLoading: false }
 
 export default function ChacraForm() {
-
   const [state, setState] = useState(initialState)
   const [touched, setTouched] = useState({
     name: false,
@@ -133,9 +133,15 @@ export default function ChacraForm() {
         checkEmail(values.email)
       ) {
         const result = await sendContactForm(values)
-        console.log({ result })
+        const createdUser = await handleCreateUser(values)
 
-        toast.success('Daten gesendet!')
+        if(!createdUser?.ok){
+          throw new Error('Error, user not created!!!')
+        }
+        if(!result.data){
+          throw new Error('Error, mail not sended!!!')
+        }
+        toast.success('Success! Message sent. We will contact you soon.')
         setState(initialState)
         setTouched({
           name: false,
@@ -150,7 +156,7 @@ export default function ChacraForm() {
         }))
         setState(initialState)
       } else {
-        toast.error('Pflichtfelder ausfüllen!')
+        toast.error('Error! Internal Server Error. Please try again later.')
 
         ///invalid email
         if (!checkEmail(values.email)) {
@@ -189,7 +195,11 @@ export default function ChacraForm() {
     <div className={s.section}>
       <MyContainer>
         <h4>{t('title')}</h4>
-        <form className={`${s.formContainer} ${theme === 'light'? s.lightLabel : s.darkLabel}`}>
+        <form
+          className={`${s.formContainer} ${
+            theme === 'light' ? s.lightLabel : s.darkLabel
+          }`}
+        >
           <Container className={s.form} maxW='100%'>
             <FormControl
               isRequired
@@ -204,7 +214,9 @@ export default function ChacraForm() {
                 onChange={handleChange}
                 onBlur={onBlur}
               />
-              <FormErrorMessage className={s.red}>{t('require')}</FormErrorMessage>
+              <FormErrorMessage className={s.red}>
+                {t('require')}
+              </FormErrorMessage>
             </FormControl>
             <FormControl
               isRequired
@@ -221,7 +233,9 @@ export default function ChacraForm() {
                 onChange={handleChange}
                 onBlur={onBlur}
               />
-              <FormErrorMessage className={s.red}>{t('require')}</FormErrorMessage>
+              <FormErrorMessage className={s.red}>
+                {t('require')}
+              </FormErrorMessage>
             </FormControl>
             <FormControl
               isRequired
@@ -240,10 +254,14 @@ export default function ChacraForm() {
                 onBlur={onBlur}
               />
               {!isValidValues.email && (
-                <FormErrorMessage className={s.red}>{t('emailError')}</FormErrorMessage>
+                <FormErrorMessage className={s.red}>
+                  {t('emailError')}
+                </FormErrorMessage>
               )}
               {!values.email && touched.email && (
-                <FormErrorMessage className={s.red}>{t('require')}</FormErrorMessage>
+                <FormErrorMessage className={s.red}>
+                  {t('require')}
+                </FormErrorMessage>
               )}
             </FormControl>
 
@@ -259,9 +277,9 @@ export default function ChacraForm() {
             <FormControl mb={5}>
               <FormLabel>{t('coment')}</FormLabel>
               <Textarea
-                name='nachricht'
+                name='coment'
                 rows={4}
-                value={values.nachricht}
+                value={values.coment}
                 onChange={handleChangeTextarea}
               />
             </FormControl>

@@ -1,9 +1,9 @@
 interface Props {
   name: string
+  email: string
   surname: string
   number: string
-  email: string
-  nachricht: string
+  coment: string
 }
 
 export const createSendGrMsg = ({
@@ -11,16 +11,16 @@ export const createSendGrMsg = ({
   surname,
   number,
   email,
-  nachricht,
+  coment,
 }: Props) => {
-  console.log('here', name, surname, nachricht, email, number)
+  console.log('here', name, surname, coment, email, number)
 
   return {
     to: 'nastasia199126@gmail.com',
     // to: 'escuelajorgesafer@gmail.com',
     from: 'thespacedancemlg@gmail.com',
     subject: 'Sending with Twilio SendGrid is Fun',
-    text: `Name: ${name}, Email: ${email}, Number: ${number}, Message: ${nachricht}`,
+    text: `Name: ${name}, Email: ${email}, Number: ${number}, Message: ${coment}`,
     html: `<h1>Name</h1>
       <p>${name}</p>
       <h1>Surname</h1>
@@ -30,6 +30,6 @@ export const createSendGrMsg = ({
       <h1>Number</h1>
       <p>${number}</p>
       <h1>Coment</h1>
-      <p>${nachricht}</p>`,
+      <p>${coment}</p>`,
   }
 }

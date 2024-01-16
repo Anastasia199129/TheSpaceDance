@@ -11,15 +11,13 @@ import { NextResponse } from 'next/server'
 export async function POST(request: Request) {
   try {
     const data = await request.json()
-    if (data) {
-      // console.log({ 'data!!': data })
+    console.log({ data })
 
-      const msg = createSendGrMsg(data)
-      console.log( {msg});
-      
+    if (data) {
+      const msg = await createSendGrMsg(data)
+
       if (msg) {
-        const d = await sgMail.send(msg)
-        console.log('itshere', { d })
+        const d = sgMail.send(msg)
         return NextResponse.json({ data: data }, { status: 201 })
       }
     }
@@ -28,6 +26,5 @@ export async function POST(request: Request) {
       { error: 'Internal Server Error!!!!' },
       { status: 500 }
     )
-    // return res.status(500).json({ error: error })
   }
 }

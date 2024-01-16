@@ -1,17 +1,16 @@
 import { ReactNode } from 'react'
 
-// import { Inter } from 'next/font/google'
-
-
-import Container from '@/components/Container/Container'
-import Header from '@/components/Header/Header'
 
 import { NextIntlClientProvider } from 'next-intl'
 import { notFound } from 'next/navigation'
+import { ToastContainer } from 'react-toastify'
 
-import '@/public/styles/globals.sass'
 import Providers from '../providers'
 import Footer from '@/components/Footer/Footer'
+import Header from '@/components/Header/Header'
+
+import 'react-toastify/dist/ReactToastify.css'
+import '@/public/styles/globals.sass'
 
 interface LocaleLayoutProps {
   children: ReactNode;
@@ -38,14 +37,13 @@ export default async function LocaleLayout({ children, params }:LocaleLayoutProp
   return (
     <html lang={locale}>
       <title>TheSpaceDance</title>
-      <body>
+      <body suppressHydrationWarning={true}>
         <Providers>
           <NextIntlClientProvider locale={locale} messages={messages}>
           <Header />
             <main>
-              {/* <Container> */}
+                <ToastContainer autoClose={2000} />
                 {children}
-              {/* </Container> */}
             </main>
             <Footer/>
           </NextIntlClientProvider>

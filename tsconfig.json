@@ -30,6 +30,6 @@
     "next-i18next.js",
     "store/ThemeContext.js",
     "app/providers.js"
-, "components/LanguageSwitcher/LanguageSwitcher.test.tsx"  ],
+, "components/LanguageSwitcher/LanguageSwitcher.test.tsx", "lib/apollo-provider.js"  ],
   "exclude": ["node_modules"]
 }

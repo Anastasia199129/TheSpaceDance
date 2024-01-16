@@ -10,10 +10,10 @@ export default function Schedules() {
   return (
     <ul className={s.list}>
       <li>
-        <p>{t('weekend')}</p>
+        <p>{t('workDays')}</p>
       </li>
       <li>
-        <p>{t('workDays')}</p>
+        <p>{t('weekend')}</p>
       </li>
     </ul>
   )
